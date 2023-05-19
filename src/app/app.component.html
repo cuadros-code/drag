@@ -1,4 +1,15 @@
-<div 
+<section>
+  <div class="seguros" *ngFor="let item of seguros">
+    <h1>{{ item.title }}</h1>
+    <p>{{ item.price }}</p>
+
+    <div class="buttons">
+      <button>Comparar</button>
+      <button>Comprar</button>
+    </div>
+  </div>
+</section>
+<div
   #action
   class="action"
   (touchmove)="onDrag($event)"
@@ -7,5 +18,7 @@
   <div 
     class="button-action"
     (click)="openActionSheet()"
-  ></div>
+  >
+    <button class="action-event"></button>
+  </div>
 </div>

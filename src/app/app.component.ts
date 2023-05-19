@@ -1,4 +1,5 @@
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
+import { dataSeguros } from './data';
 
 @Component({
   selector: 'app-root',
@@ -12,12 +13,7 @@ export class AppComponent {
   actionCounter: number = 0;
   initialY: number = 0;
   endY: number = 0;
-
-  @HostListener('window:beforeunload', ['$event'])
-  beforeUnloadHandler(event: Event) {
-    event.preventDefault();
-    event.returnValue = false;
-  }
+  seguros = dataSeguros;
 
   openActionSheet(){
     this.openAction 
