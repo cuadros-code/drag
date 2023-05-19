@@ -13,6 +13,12 @@ export class AppComponent {
   initialY: number = 0;
   endY: number = 0;
 
+  @HostListener('window:beforeunload', ['$event'])
+  beforeUnloadHandler(event: Event) {
+    event.preventDefault();
+    event.returnValue = false;
+  }
+
   openActionSheet(){
     this.openAction 
       ? this.action.nativeElement.style.height = '80vh'
