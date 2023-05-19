@@ -14,6 +14,7 @@ export class AppComponent {
   initialY: number = 0;
   endY: number = 0;
   seguros = dataSeguros;
+  listToComparete: any[] = [];
 
   openActionSheet(){
     this.openAction 
@@ -43,6 +44,14 @@ export class AppComponent {
 
   onDragEnd( event: TouchEvent ){
     this.actionCounter = 0;
+  }
+
+  onAddItem( item: any ){
+    this.listToComparete.push(item)
+    if(this.listToComparete.length >= 1){
+      this.action.nativeElement.style.height = '30vh'
+      this.openAction = true;
+    }
   }
 
 }

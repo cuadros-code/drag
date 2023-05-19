@@ -63,3 +63,25 @@ button{
   font-size: 1.2rem;
   padding: 5px 10px;
 }
+
+img{
+  width: 80px;
+}
+
+.list{
+  display: flex;
+  margin: 0 auto;
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 90%;
+}
+
+.list-item{
+  margin-right: 15px;
+  border: 1px solid;
+  padding: 10px 20px;
+}
+
+.list-item h2{
+  font-size: 1.3rem;
+}

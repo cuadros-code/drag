@@ -4,7 +4,7 @@
     <p>{{ item.price }}</p>
 
     <div class="buttons">
-      <button>Comparar</button>
+      <button (click)="onAddItem(item)">Comparar</button>
       <button>Comprar</button>
     </div>
   </div>
@@ -12,13 +12,20 @@
 <div
   #action
   class="action"
-  (touchmove)="onDrag($event)"
-  (touchend)="onDragEnd($event)"
->
+  >
   <div 
     class="button-action"
     (click)="openActionSheet()"
+    (touchmove)="onDrag($event)"
+    (touchend)="onDragEnd($event)"
   >
     <button class="action-event"></button>
+  </div>
+  <div class="list">
+    <div class="list-item" *ngFor="let itemComparate of listToComparete">
+      <img src="https://thumbs.dreamstime.com/b/icono-de-signo-interrogaci%C3%B3n-en-estilo-doodle-s%C3%ADmbolo-ayuda-faq-fondo-azul-vector-prueba-227055940.jpg" alt="">
+      <h2>{{itemComparate.title}}</h2>
+      <h3>{{itemComparate.price}}</h3>
+    </div>
   </div>
 </div>
