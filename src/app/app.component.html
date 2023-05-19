@@ -1,0 +1,11 @@
+<div 
+  #action
+  class="action"
+  (touchmove)="onDrag($event)"
+  (touchend)="onDragEnd($event)"
+>
+  <div 
+    class="button-action"
+    (click)="openActionSheet()"
+  ></div>
+</div>
