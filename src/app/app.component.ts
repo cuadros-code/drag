@@ -17,10 +17,10 @@ export class AppComponent {
   listToComparete: any[] = [];
 
   openActionSheet(){
-    this.openAction 
-      ? this.action.nativeElement.style.height = '80vh'
-      : this.action.nativeElement.style.height = '10vh'
     this.openAction = !this.openAction;
+    this.openAction 
+        ? this.action.nativeElement.style.height = '450px'
+        : this.action.nativeElement.style.height = '10vh';
   }
 
   onDrag( event: TouchEvent ){
@@ -35,22 +35,22 @@ export class AppComponent {
     
     if(this.actionCounter == 15){
       if(this.initialY > this.endY){
-        this.action.nativeElement.style.height = '80vh'
+        this.action.nativeElement.style.height = '450px'
       } else {
         this.action.nativeElement.style.height = '10vh'
       }
     }
   }
 
-  onDragEnd( event: TouchEvent ){
+  onDragEnd(){
     this.actionCounter = 0;
   }
 
   onAddItem( item: any ){
     this.listToComparete.push(item)
     if(this.listToComparete.length >= 1){
-      this.action.nativeElement.style.height = '30vh'
-      this.openAction = true;
+      this.action.nativeElement.style.height = '200px'
+      this.openAction = false;
     }
   }
 

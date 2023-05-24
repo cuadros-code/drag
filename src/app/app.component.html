@@ -1,31 +1,50 @@
-<section>
-  <div class="seguros" *ngFor="let item of seguros">
-    <h1>{{ item.title }}</h1>
-    <p>{{ item.price }}</p>
+<div class="container">
+  <section>
+    <div class="seguros" *ngFor="let item of seguros">
+      <h1>{{ item.title }}</h1>
+      <p>{{ item.price }}</p>
 
-    <div class="buttons">
-      <button (click)="onAddItem(item)">Comparar</button>
-      <button>Comprar</button>
+      <div class="buttons">
+        <button (click)="onAddItem(item)">Comparar</button>
+        <button>Comprar</button>
+      </div>
     </div>
-  </div>
-</section>
-<div
-  #action
-  class="action"
-  >
-  <div 
-    class="button-action"
-    (click)="openActionSheet()"
-    (touchmove)="onDrag($event)"
-    (touchend)="onDragEnd($event)"
-  >
-    <button class="action-event"></button>
-  </div>
-  <div class="list">
-    <div class="list-item" *ngFor="let itemComparate of listToComparete">
-      <img src="https://thumbs.dreamstime.com/b/icono-de-signo-interrogaci%C3%B3n-en-estilo-doodle-s%C3%ADmbolo-ayuda-faq-fondo-azul-vector-prueba-227055940.jpg" alt="">
-      <h2>{{itemComparate.title}}</h2>
-      <h3>{{itemComparate.price}}</h3>
+  </section>
+  <div
+    #action
+    class="action"
+    >
+    <div 
+      class="button-action"
+      (click)="openActionSheet()"
+      (touchmove)="onDrag($event)"
+      (touchend)="onDragEnd()"
+    >
+      <button class="action-event"></button>
+    </div>
+    <div class="list">
+      <div class="list-item" *ngFor="let itemComparate of listToComparete">
+        <img src="https://thumbs.dreamstime.com/b/icono-de-signo-interrogaci%C3%B3n-en-estilo-doodle-s%C3%ADmbolo-ayuda-faq-fondo-azul-vector-prueba-227055940.jpg" alt="">
+        <h2>{{itemComparate.title}}</h2>
+        <h3>{{itemComparate.price}}</h3>
+      </div>
     </div>
   </div>
 </div>
+
+
+<!-- <img 
+  class="imagen"
+  src="https://sufi-public-images.s3.us-east-1.amazonaws.com/RESPONSABILIDAD_CIVIL.png" 
+  alt=""
+>
+<img 
+  class="imagen"
+  src="https://sufi-public-images.s3.us-east-1.amazonaws.com/PERDIDA_TOTAL_DAÑOS.png" 
+  alt=""
+>
+<img 
+  class="imagen"
+  src="https://sufi-public-images.s3.us-east-1.amazonaws.com/GASTOS_DE_GRUA.png" 
+  alt=""
+> -->
