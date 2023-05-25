@@ -19,7 +19,7 @@ export class AppComponent {
   openActionSheet(){
     this.openAction = !this.openAction;
     this.openAction 
-        ? this.action.nativeElement.style.height = '450px'
+        ? this.action.nativeElement.style.height = '200px'
         : this.action.nativeElement.style.height = '10vh';
   }
 
@@ -35,7 +35,7 @@ export class AppComponent {
     
     if(this.actionCounter == 15){
       if(this.initialY > this.endY){
-        this.action.nativeElement.style.height = '450px'
+        this.action.nativeElement.style.height = '200px'
       } else {
         this.action.nativeElement.style.height = '10vh'
       }

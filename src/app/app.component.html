@@ -1,11 +1,18 @@
 <div class="container">
   <section>
-    <div class="seguros" *ngFor="let item of seguros">
+    <div class="seguros" *ngFor="let item of seguros;  index as i">
       <h1>{{ item.title }}</h1>
       <p>{{ item.price }}</p>
 
       <div class="buttons">
-        <button (click)="onAddItem(item)">Comparar</button>
+        <button *ngIf="i % 2 == 0" class="button-comparar" (click)="onAddItem(item)">
+          <div class="lds-ripple"><div></div><div></div></div>
+          Comparar
+        </button>
+
+        <button *ngIf="i % 2 == 1" class="button-comparar scalar" (click)="onAddItem(item)">
+          Comparar
+        </button>
         <button>Comprar</button>
       </div>
     </div>
