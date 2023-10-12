@@ -1,0 +1,20 @@
+<form [formGroup]="datePicker">
+  <select formControlName="year">
+    <option disabled value="">Año</option>
+    <option *ngFor="let year of availableYears">{{ year }}</option>
+  </select>
+
+  <select formControlName="month">
+    <option disabled value="">Mes</option>
+    <option *ngFor="let month of availableMonth">{{ month }}</option>
+  </select>
+
+  <select formControlName="day">
+    <option disabled value="">Dia</option>
+    <option *ngFor="let day of availableDay.keys()">{{ day + 1 }}</option>
+  </select>
+</form>
+
+<pre>
+  {{ datePicker.value | json }}
+</pre>
